@@ -278,8 +278,12 @@ configure(allprojects) { project ->
 			cacheChangingModulesFor 0, "seconds"
 		}
 		repositories {
+			maven { url 'https://maven.aliyun.com/repository/public' }
+			maven { url 'https://maven.aliyun.com/repository/jcenter'}
 			mavenCentral()
-			maven { url "https://repo.spring.io/libs-spring-framework-build" }
+			/* 问题点:repo.spring.io 与  repo.springsource.org*/
+			maven { url "https://repo.springsource.org/libs-release" }
+			maven { url 'https://repo.springsource.org/plugins-release' }
 		}
 	}
 	configurations.all {
